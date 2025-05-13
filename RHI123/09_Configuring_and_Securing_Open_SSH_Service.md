@@ -96,7 +96,7 @@ The ssh-copy-id command copies the file ~/.ssh/id_rsa.pub by default.
 
 ### 🔐 Example of a custom connection:
 ```
-[abeer@client ~]$ ssh root@192.168.1.1 -p 2200
+[abdo@client ~]$ ssh root@192.168.1.1 -p 2200
 # Connect to SSH on a custom port
 ```
 ---
