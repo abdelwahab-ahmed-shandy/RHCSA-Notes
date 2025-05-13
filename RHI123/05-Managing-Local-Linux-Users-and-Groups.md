@@ -7,18 +7,18 @@
 [root@master ~]# ps aux
 [root@master ~]# useradd --help
 ```
-#Create a user
+## Create a user
 ```
 [root@master ~]# useradd abeer
 [root@master ~]# passwd abeer
 ```
-# Create a user with specific group, UID, and shell
+## Create a user with specific group, UID, and shell
 
 ```
 [root@master ~]# useradd -G admin -u 1005 -s /usr/sbin/nologin abdo
 ```
 
-# Create a user with comment (GECOS), expiration date, and specific shell
+## Create a user with comment (GECOS), expiration date, and specific shell
 ```
 [root@master ~]# useradd -c "ahmed hosni" -e 12-31-2016 -s /bin/csh ahmed
 ```
@@ -43,7 +43,7 @@ Hash types:
 
 6 = SHA-512
 
-# To change password hashing algorithm:
+## To change password hashing algorithm:
 
 ```
 [root@master ~]# authconfig --passalgo=<descrypt|bigcrypt|md5|sha256|sha512>
@@ -52,7 +52,7 @@ Hash types:
 
 ## 👥 Groups:
 
-# Create groups
+## Create groups
 ```
 [root@master ~]# groupadd sales
 [root@master ~]# groupadd -g 1005 admin
@@ -65,7 +65,7 @@ Hash types:
 [root@master ~]# grep sales /etc/group
 ```
 
-# Format: groupname:password:GID:user1,user2,...
+## Format: groupname:password:GID:user1,user2,...
 
 🛠 Modify groups:
 
@@ -95,7 +95,7 @@ Hash types:
 [root@master ~]# vim /etc/sudoers
 ```
 
-# Add:
+## Add:
 abeer   ALL=(ALL)       ALL
 %sales  ALL=(ALL)       ALL
 
@@ -104,7 +104,7 @@ abeer   ALL=(ALL)       ALL
 [abdo@master ~]$ sudo passwd -l ahmed
 ```
 
-# To monitor:
+## To monitor:
 
 ```
 [root@master ~]# tail -f /var/log/secure
@@ -119,7 +119,7 @@ abeer   ALL=(ALL)       ALL
 [root@master ~]# usermod -G sales abeer       # Set new secondary group (overwrite)
 [root@master ~]# usermod -aG admin abeer      # Add to secondary group (append)
 ```
-# Or manually edit:
+## Or manually edit:
 ```
 [root@master ~]# vim /etc/group
 ```
